@@ -1,0 +1,2 @@
+Eclipse Diff Util is a program to compare installed plugins and features of Eclipse IDE installation holders.
+It allows to extract differences to assist in creating dropin folder contents.

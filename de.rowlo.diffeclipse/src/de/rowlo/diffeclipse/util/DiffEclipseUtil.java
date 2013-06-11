@@ -121,7 +121,7 @@ public final class DiffEclipseUtil implements FolderScannerListener {
 			filePath = filePath.substring(extendedEclipseLocation.length());
 		}
 		Set<String> files = plainEclipseFiles.get(plainEclipseLocation);
-		return files.contains(filePath);
+		return (files == null) ? false : files.contains(filePath);
 	}
 
 	public boolean isPlainEclipseLocation(String location) {

@@ -10,6 +10,8 @@
  *******************************************************************************/
 package de.rowlo.diffeclipse.event;
 
+import java.io.File;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
@@ -56,7 +58,16 @@ public class ButtonChooseLocationHandler extends AbstractDirectoryButtonSelectio
 
 					String path = dialog.open();
 					if (path != null) {
-						setLastChoosenPath(path);
+						File fPath = new File(path);
+						String parentPath = fPath.getParent();
+						if (parentPath != null)
+						{
+							setLastChoosenPath(parentPath);
+						}
+						else
+						{
+							setLastChoosenPath(path);
+						}
 						text.setText(path);
 					}
 				}
